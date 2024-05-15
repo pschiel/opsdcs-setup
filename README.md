@@ -13,7 +13,7 @@
 
 5. Install [dcs-fiddle-server.lua](https://github.com/omltcat/dcs-snippets/blob/master/Scripts/Hooks/dcs-fiddle-server.lua) into `Saved Games/DCS/Scripts/Hooks` folder (required for lua runner)
 
-6. Create a [launch.json](../.vscode/launch.json) debug config (emmylua debugger setup)
+6. Create a [launch.json](https://github.com/pschiel/opsdcs-setup/blob/main/.vscode/launch.json) debug config (emmylua debugger setup)
 
 
 ## Enable debugging
@@ -64,7 +64,7 @@ To access other environments, wrap your code in `net.dostring_in()` like so:
 
 ## Auto-completion via LUA stubs
 
-Copy the [LUA stubs](../stubs) into your project, or set `"Lua.workspace.library": {"/path/to/your/stub/files": true}` in VSCode settings.
+Copy the [LUA stubs](https://github.com/pschiel/opsdcs-setup/blob/main/stubs) into your project, or set `"Lua.workspace.library": {"/path/to/your/stub/files": true}` in VSCode settings.
 
 *(Notice: stubs are not complete)*
 
