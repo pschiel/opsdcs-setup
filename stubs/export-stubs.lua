@@ -1,0 +1,73 @@
+------------------------------------------------------------------------------
+--- STATE "export"
+---
+--- available in _G:
+---  - package, require, coroutine, os, io, lfs
+---  - all functions in Export
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+--- EXPORT FUNCTIONS
+------------------------------------------------------------------------------
+
+--- @class Export
+--- @field LuaExportStart fun() Works once just before mission start.
+--- @field LuaExportStop fun() Works once just after mission stop.
+--- @field LuaExportBeforeNextFrame fun() Works just before every simulation frame.
+--- @field LuaExportAfterNextFrame fun() Works just after every simulation frame.
+--- @field LuaExportActivityNextEvent fun(t:any):any Put your event code here and increase return value for the next event. if return value == t then the activity will be terminated
+--- @field LoCreateCoroutineActivity fun(index:number, tStart:number, tPeriod:number) Plan your coroutines activity at model times
+--- @field CoroutineResume fun(index:number, tCurrent:number):boolean This function will be called by Lock On model timer for every coroutine to resume it. Return true to resume, false to stop.
+--- @field LoGetObjectById fun(id:number):table Gets object by id (Object)
+--- @field LoGetWorldObjects fun(type:string):table Gets world objects (Object)
+--- @field LoGetTWSInfo fun():table Get TWS info (Sensor)
+--- @field LoGetTargetInformation fun():table Gets target information (Sensor)
+--- @field LoGetLockedTargetInformation fun():table Gets locked target information (Sensor)
+--- @field LoGetSightingSystemInfo fun():table Sight system info (Sensor)
+--- @field LoGetWingTargets fun():table Get wing targets (Sensor)
+--- @field LoGetPlayerPlaneId fun():number Gets player plane ID (Ownship)
+--- @field LoGetIndicatedAirSpeed fun():number Gets indicated air speed (Ownship)
+--- @field LoGetTrueAirSpeed fun():number Gets true air speed (Ownship)
+--- @field LoGetAltitudeAboveSeaLevel fun():number Gets altitude above sea level (Ownship)
+--- @field LoGetAltitudeAboveGroundLevel fun():number Gets altitude above ground level (Ownship)
+--- @field LoGetAngleOfAttack fun():number Gets angle of attack (Ownship)
+--- @field LoGetAccelerationUnits fun():table Gets acceleration units (Ownship)
+--- @field LoGetVerticalVelocity fun():number Gets vertical velocity (Ownship)
+--- @field LoGetMachNumber fun():number Gets Mach number (Ownship)
+--- @field LoGetADIPitchBankYaw fun():number, number, number Gets ADI pitch, bank and yaw (Ownship)
+--- @field LoGetMagneticYaw fun():number Gets magnetic yaw (Ownship)
+--- @field LoGetGlideDeviation fun():number Gets glide deviation (Ownship)
+--- @field LoGetSideDeviation fun():number Gets side deviation (Ownship)
+--- @field LoGetSlipBallPosition fun():number Gets slip ball position (Ownship)
+--- @field LoGetBasicAtmospherePressure fun():number Gets basic atmosphere pressure (Ownship)
+--- @field LoGetControlPanel_HSI fun():table Gets control panel HSI (Ownship)
+--- @field LoGetEngineInfo fun():table Gets engine info (Ownship)
+--- @field LoGetRoute fun():table Gets route info (Ownship)
+--- @field LoGetNavigationInfo fun():table Gets navigation info (Ownship)
+--- @field LoGetMCPState fun():table Gets MCP state (Ownship)
+--- @field LoGetSelfData fun():table Gets self data (Ownship)
+--- @field LoGetCameraPosition fun():Position3 Gets camera position (Ownship)
+--- @field LoGetPayloadInfo fun():table Return weapon stations (Ownship)
+--- @field LoGetMechInfo fun():table Mechanization info (Ownship)
+--- @field LoGetRadioBeaconsStatus fun():table Beacons lock (Ownship)
+--- @field LoGetWingInfo fun():table Get wingmen info (Ownship)
+--- @field LoGetVectorVelocity fun():Vec3 Get vector velocity (Ownship)
+--- @field LoGetAngularVelocity fun():Vec3 Get angular velocity (Ownship)
+--- @field LoGetVectorWindVelocity fun():Vec3 Get wind velocity (Ownship)
+--- @field LoGetSnares fun():table Get chaff/flare info (Ownship)
+--- @field LoSetCameraPosition fun(pos:Position3) Set camera position (Ownship)
+--- @field LoSetCommand fun(command:number, value:number) Set command (Ownship)
+--- @field LoEnableExternalFlightModel fun() Call one time in start (Ownship)
+--- @field LoUpdateExternalFlightModel fun(binary_data:any) Update function (Ownship)
+--- @field LoGetHelicopterFMData fun():table Heli FM data (Ownship)
+--- @field LoGetPilotName fun():string Gets pilot name (Always)
+--- @field LoGetAltitude fun(x:number, z:number):number Gets altitude (Always)
+--- @field LoGetNameByType fun(level1:number, level2:number, level3:number, level4:number):string Weapon Control System (Always)
+--- @field LoGeoCoordinatesToLoCoordinates fun(longitude_degrees:number, latitude_degrees:number):Vec3 geo to ll (Always)
+--- @field LoLoCoordinatesToGeoCoordinates fun(x:number, z:number):number, number ll to geo (Always)
+--- @field LoGetVersionInfo fun():string Gets version info (Always)
+--- @field LoGetModelTime fun():number Returns current model time (Always)
+--- @field LoGetMissionStartTime fun():number Returns mission start time (Always)
+--- @field GetClickableElemnts fun():table Gets clickable elements (Misc)
+--- @field GetDevice fun(id:number):table Gets device (Misc)
+--- @field GetIndicator fun(id:number):table Gets indicator (Misc)
